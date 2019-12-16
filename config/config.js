@@ -6,7 +6,7 @@ export default {
         path: '/',
         component: '../layouts/index',
         routes: [
-          { path: '/', redirect:'/Sports' },
+          // { path: '/', redirect:'/Sports' },
           { path: '/Sports', component: '../pages/Home/index' },
           { path: '/Foods', component: '../pages/About/index' },
           { path: '/Learning', component: '../pages/User/index' },

@@ -36,6 +36,21 @@ const { Option } = Select;
     })
 
   }
+
+  out = () => {
+    localStorage.clear();
+    window.location.href = '/Login';
+  }
+  
+  checkUserInfo = () => {
+    try {
+      const {userInfo} = JSON.parse(localStorage.getItem('userInfo'));
+      return userInfo || this.out();
+    } catch (e) {
+      this.out();
+    }
+  }
+
     render() {
       const {currLocale} = this.props;
         return(
@@ -43,7 +58,7 @@ const { Option } = Select;
                 <div className="person-pic">
                     <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                     <Breadcrumb.Item overlay={this.getMemu()} style={{marginLeft:'20px'}} separator="">
-                    <span>{JSON.parse(localStorage.getItem("userInfo")).username}</span>
+                    <span>{this.checkUserInfo()}</span>
                     </Breadcrumb.Item>
                     <Select
                       defaultValue={currLocale}
