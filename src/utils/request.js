@@ -2,7 +2,6 @@ import axios from 'axios';
 import { message } from 'antd';
 axios.defaults.timeout =  5000;
 axios.interceptors.request.use((config) => {
-    console.log(config)
     return config
 },error => {
     return Promise.reject(error);

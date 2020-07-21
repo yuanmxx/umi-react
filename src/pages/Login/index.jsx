@@ -17,7 +17,7 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        storage.add("userInfo",JSON.stringify(values))
+        storage.add("userInfo",JSON.stringify(values)) 
         dispatch({
             type:'global/login',
             payload:values
@@ -40,7 +40,7 @@ class Login extends Component {
     return (
     <div className="login">
         <Col className="login-wrap">
-            <h1>umi-react</h1>
+            <h1>圆溜溜</h1>
         <Form onSubmit={this.handleSubmit}>
             <Form.Item>
             {getFieldDecorator('username', {

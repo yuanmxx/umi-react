@@ -4,16 +4,22 @@ export default {
     routes: [
       {
         path: '/',
+        redirect: '/App',
+      },
+      {
+        path: '/App',
         component: '../layouts/index',
         routes: [
-          // { path: '/', redirect:'/Sports' },
-          { path: '/Sports', component: '../pages/Home/index' },
-          { path: '/Foods', component: '../pages/About/index' },
-          { path: '/Learning', component: '../pages/User/index' },
-          { path: '/Goout/:id', component: '../pages/Goout/$id' },
-          { path: '/Login',component: '../pages/Login/index' },
+          { path: '/App', redirect:'/App/Sports' },
+          { path: '/App/Sports', component: '../pages/Home/index' },
+          { path: '/App/Foods', component: '../pages/About/index' },
+          { path: '/App/Learning', component: '../pages/User/index' },
+          { path: '/App/Goout/:id', component: '../pages/Goout/$id' },
         ]
-      }
+      },{
+         path: '/Login',
+         component: '../pages/Login/index' 
+      },
     ],
     "disableCSSModules":true,
     outputPath: './build',

@@ -56,7 +56,7 @@ class NavList extends Component {
         })
    }
 
-   // 获取 rootSubmenuKeys
+   // 获取 rootSubmenuKeys(是否展开一项其余收起来)
    getRootSubmenuKeys = () => {
     this.props.navList.map((item) => {
         keys.push(item.key)

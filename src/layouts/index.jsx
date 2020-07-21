@@ -1,5 +1,5 @@
 import './index.less';
-import React, { Component,Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Row, Col,Breadcrumb,ConfigProvider} from 'antd';
 import Header from '@/components/Header';
@@ -18,28 +18,17 @@ import en_US from 'antd/lib/locale-provider/en_US';
 
 class BasicLayout extends Component {
   componentDidMount() {
-    const {dispatch, currLocale,history,location: {pathname}} = this.props;
-    if(pathname === '/Login') {
-      history.push('/Login')
-    }
-    // 更改国际化
+    // 初始化国际化
+    const {dispatch} = this.props;
     dispatch({
-      type: 'global/changeLocale',
-      payload: currLocale,
+      type: 'global/initlocal',
     });
   }
 
 
   render() {
-    const {location: {pathname}, children, currLocale, localeLoad } = this.props;
-    if (pathname === '/Login') {
-      return localeLoad && 
-      <Fragment>
-        {children}
-      </Fragment>;
-    }
+    const {location: {pathname}, children, currLocale } = this.props;
       return (
-        localeLoad && 
         <ConfigProvider  locale={ currLocale === 'zh_CN' ? zh_CN : en_US }>   
         <Row className="container">
           <NavList { ...this.props }/>

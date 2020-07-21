@@ -1,9 +1,8 @@
-const name = ["袁铭湘",'冬瓜']
+const name = ["超级管理员",'普通员工']
 module.exports = {
     'POST /api/login': (req, res) => {
         const { username, password } = req.body;
-        console.log(username,name.find((item) => item === username))
-        if (password === '1154322556' && name.find((item) => item === username )) {
+        if (password === '111' && name.find((item) => item === username )) {
             setTimeout(() => {
                 res.json({
                     msg: '请求处理成功',

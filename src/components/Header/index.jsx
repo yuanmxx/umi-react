@@ -37,17 +37,13 @@ const { Option } = Select;
 
   }
 
-  out = () => {
-    localStorage.clear();
-    window.location.href = '/Login';
-  }
-  
+
   checkUserInfo = () => {
     try {
-      const {userInfo} = JSON.parse(localStorage.getItem('userInfo'));
-      return userInfo || this.out();
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      return userInfo.username || (window.location.href = '/Login') ;
     } catch (e) {
-      this.out();
+      this.logout();
     }
   }
 

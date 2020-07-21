@@ -11,30 +11,25 @@ const adminmenu =  [
                 title:'足球',
                 entitle:'socerball',
                 key:'sports1',
-                route:'/Foods',
+                route:'/App/Foods',
             },
             {
                 title:'篮球',
                 entitle:'backetaball',
                 key:'sports2',
-                route:'/Learning',
+                route:'/App/Learning',
             },
             {
                 title:'排球',
                 entitle:'paiqiuball',
                 key:'sports3',
-                route:'/Sports',
+                route:'/App/Sports',
             },
             {
                 title:'高尔夫',
                 entitle:'gaoerfu',
                 key:'sports4',
-                route:'/Goout/:id',
-            },
-            {
-                title:'游泳',
-                entitle:'swimming',
-                key:'sports5',
+                route:'/App/Goout/:id',
             },{
                 title:'桌球',
                 entitle:'tableball',
@@ -63,26 +58,6 @@ const adminmenu =  [
                 title:'糖醋排骨',
                 entitle:'paigu',
                 key:'foods1',
-            },
-            {
-                title:'鱼香肉丝',
-                entitle:'rousi',
-                key:'food2',
-            },
-            {
-                title:'口水鸡',
-                entitle:'ji',
-                key:'food3',
-            },
-            {
-                title:'火锅',
-                entitle:'huohuo',
-                key:'food4',
-            },
-            {
-                title:'串串',
-                entitle:'chuanchuan',
-                key:'food5',
             }
         ]
     },
@@ -105,16 +80,6 @@ const adminmenu =  [
                 title:'美洲',
                 entitle:'meizhou',
                 key:'goout2',
-            },
-            {
-                title:'澳洲',
-                entitle:'ouzhou',
-                key:'goout3',
-            },
-            {
-                title:'非洲',
-                entitle:'feizhou',
-                key:'goout4',
             }
         ]
     }
@@ -130,31 +95,27 @@ const usermenu = [
                 title:'足球',
                 entitle:'socerball',
                 key:'sports1',
-                route:'/Foods',
+                route:'/App/Foods',
             },
             {
                 title:'篮球',
                 entitle:'backetaball',
                 key:'sports2',
-                route:'/Learning',
+                route:'/App/Learning',
             },
             {
                 title:'排球',
                 entitle:'paiqiuball',
                 key:'sports3',
-                route:'/Sports',
+                route:'/App/Sports',
             },
             {
                 title:'高尔夫',
                 entitle:'gaoerfu',
                 key:'sports4',
-                route:'/Goout/:id',
+                route:'/App/Goout/:id',
             },
             {
-                title:'游泳',
-                entitle:'swimming',
-                key:'sports5',
-            },{
                 title:'桌球',
                 entitle:'tableball',
                 key:'sports6',
@@ -188,7 +149,7 @@ const usermenu = [
 
 ]
 export function getMenu() {
-    const menu = JSON.parse(localStorage.getItem('userInfo')).username === "袁铭湘" ? adminmenu : usermenu;
+    const menu = JSON.parse(localStorage.getItem('userInfo')).username === "超级管理员" ? adminmenu : usermenu;
     return menu;
 }
 
