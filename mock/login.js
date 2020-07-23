@@ -1,4 +1,4 @@
-const name = ['超级管理员', '普通员工'];
+const name = ['1', '2'];
 module.exports = {
     'POST /api/login': (req, res) => {
         const { username, password } = req.body;

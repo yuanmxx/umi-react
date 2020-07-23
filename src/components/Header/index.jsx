@@ -5,6 +5,8 @@ import {
 } from 'antd';
 import { connect } from 'dva';
 import './index.less';
+// import { setLocale } from 'umi-plugin-react/locale';
+
 
 const { Option } = Select;
 
@@ -39,6 +41,8 @@ class Header extends Component {
            type: 'global/initlocal',
            payload: value,
        });
+       // TODO: umi自己的插件实现
+       //    setLocale(value, false);
    }
 
   checkUserInfo = () => {
@@ -64,8 +68,8 @@ class Header extends Component {
                       style={{ width: 100, marginLeft: '20px' }}
                       onChange={this.onLocaleChange}
                   >
-                      <Option value="zh_CN">中文</Option>
-                      <Option value="en_US">English</Option>
+                      <Option value="zh-CN">中文</Option>
+                      <Option value="en-US">English</Option>
                   </Select>
               </div>
           </header>

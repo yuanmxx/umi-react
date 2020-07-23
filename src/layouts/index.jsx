@@ -7,9 +7,10 @@ import {
 import CN from 'antd/lib/locale-provider/zh_CN';
 import US from 'antd/lib/locale-provider/en_US';
 import Header from '@/components/Header';
+// import { formatMessage, setLocale } from 'umi-plugin-react/locale';
+
 import Footer from '@//components/Footer';
 import NavList from '@//components/NavList';
-
 
 @connect(({ global }) => {
     return {
@@ -19,6 +20,7 @@ import NavList from '@//components/NavList';
 })
 
 class BasicLayout extends Component {
+    // 初次渲染的时候
     componentDidMount() {
         this.initlocal();
     }
@@ -34,8 +36,10 @@ class BasicLayout extends Component {
 
     render() {
         const { location: { pathname }, children, currLocale } = this.props;
+        // TODO: umi自己的插件实现
+        // console.log(formatMessage({ id: 'textaaa' }));
         return (
-            <ConfigProvider locale={currLocale === 'zh_CN' ? CN : US}>
+            <ConfigProvider locale={currLocale === 'zh-CN' ? CN : US}>
                 <Row className="container">
                     <NavList {...this.props} />
                     <Col span={20} className="normal">

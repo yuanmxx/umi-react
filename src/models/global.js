@@ -4,16 +4,13 @@ import locales from '../locales';
 import storage from '../utils/localStorage';
 import { login, logout } from '../service/getMenu';
 
-
-const defaultState = {
-    currLocale: storage.get('locale') || 'zh_CN',
-    localeLoad: false,
-};
-
 export default {
     namespace: 'global',
 
-    state: defaultState,
+    state: {
+        currLocale: storage.get('locale') || 'zh-CN',
+        localeLoad: false,
+    },
 
     effects: {
         // 初始化和改变国际化

@@ -29,5 +29,8 @@ export default {
         Deskbool: 'Deskbool',
         foods: 'foods',
         tancu: 'tancu',
+        zuqiu: 'zuqiu',
     },
+    textaaa: 'textaaa',
+    Name: 'Nameming',
 };

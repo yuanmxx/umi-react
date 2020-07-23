@@ -32,7 +32,11 @@ export default {
             dynamicImport: false,
             title: 'my-umiapp',
             dll: false,
-
+            locale: {
+                default: 'zh-CN',
+                baseNavigator: false,
+                antd: true,
+            },
             routes: {
                 exclude: [
                     /models\//,

@@ -30,5 +30,8 @@ export default {
         Deskbool: '桌球',
         foods: '美食',
         tancu: '糖醋排骨',
+        zuqiu: '足球',
     },
+    textaaa: '测试',
+    Name: 'ming',
 };
