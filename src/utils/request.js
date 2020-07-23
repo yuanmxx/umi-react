@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { message } from 'antd';
-axios.defaults.timeout =  5000;
+
+axios.defaults.timeout = 5000;
 axios.interceptors.request.use((config) => {
-    return config
-},error => {
+    return config;
+}, error => {
     return Promise.reject(error);
-})
+});
 
 
 axios.interceptors.response.use(
@@ -13,11 +14,12 @@ axios.interceptors.response.use(
         /**
          * TODO: 全局容错处理（用code判断错误类型,code需要规范）
          */
-        switch(data.data.code){
-            case '500' :
-                message.error(data.data.msg)
-                break;
-            default:
+        console.log(data);
+        switch (data.data.code) {
+        case '500':
+            message.error(data.data.msg);
+            break;
+        default:
         }
         return data.data;
     },

@@ -2,13 +2,15 @@
 import React, { Component } from 'react';
 import { Menu, Col } from 'antd';
 import { connect } from 'dva';
+import intl from 'react-intl-universal';
 import './index.less';
 
 const { SubMenu } = Menu;
 const keys = [];
 
-
 @connect(({ getMenu: { navList } }) => ({ navList }))
+
+
 class NavList extends Component {
   state = {
       rootSubmenuKeys: [],
@@ -37,9 +39,8 @@ class NavList extends Component {
 
    // 递归渲染菜单
    getMenuOption = (navList) => {
-       const { currLocale } = this.props;
        return navList.map((item) => {
-           const name = currLocale === 'zh_CN' ? item.title : item.entitle;
+           const name = intl.get(`navList.${item.key}`);
            if (item.children) {
                return (
                    <SubMenu title={name} key={item.key}>
@@ -70,12 +71,14 @@ class NavList extends Component {
        });
    }
 
+
    render() {
        return (
            <Col span={4} className="nav-list">
                <div className="nav-logo">
                    <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="" />
-                   <span className="logo-intr">Umi~Practice</span>
+                   {/* <SelfIcon type="icon-plant" /> */}
+                   <span className="logo-intr">Umi</span>
                </div>
                <Menu
                    theme="dark"

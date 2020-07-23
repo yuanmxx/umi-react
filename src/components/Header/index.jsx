@@ -19,7 +19,7 @@ class Header extends Component {
           <Menu>
               <Menu.Item>
                   <span onClick={this.logout}>
-            退出登录
+                      退出登录
                   </span>
               </Menu.Item>
           </Menu>
@@ -36,11 +36,10 @@ class Header extends Component {
    onLocaleChange = (value) => {
        const { dispatch } = this.props;
        dispatch({
-           type: 'global/changeLocale',
+           type: 'global/initlocal',
            payload: value,
        });
    }
-
 
   checkUserInfo = () => {
       try {

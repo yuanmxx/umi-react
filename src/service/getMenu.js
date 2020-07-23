@@ -4,83 +4,50 @@ import {
 
 const adminmenu = [
     {
-        title: '运动',
-        entitle: 'sports',
-        key: 'sports',
+        // title: '运动',
+        // entitle: 'sports',
+        key: 'Sports',
         children: [
             {
-                title: '足球',
-                entitle: 'socerball',
-                key: 'sports1',
-                route: '/App/Foods',
-            },
-            {
-                title: '篮球',
-                entitle: 'backetaball',
-                key: 'sports2',
-                route: '/App/Learning',
-            },
-            {
-                title: '排球',
-                entitle: 'paiqiuball',
-                key: 'sports3',
+                // title: '排球',
+                // entitle: 'paiqiuball',
+                key: 'paiqiu',
                 route: '/App/Sports',
             },
             {
-                title: '高尔夫',
-                entitle: 'gaoerfu',
-                key: 'sports4',
+                // title: '高尔夫',
+                // entitle: 'gaoerfu',
+                key: 'gofo',
                 route: '/App/Goout/:id',
-            }, {
-                title: '桌球',
-                entitle: 'tableball',
-                key: 'sports6',
+            },
+            {
+                // title: '桌球',
+                // entitle: 'tableball',
+                key: 'Deskbool',
                 children: [
                     {
-                        title: '斯洛克',
-                        entitle: 'ssiluoke',
-                        key: 'sports61',
-                    },
-                    {
-                        title: '美式桌球',
-                        entitle: 'UStableball',
-                        key: 'sports62',
+                        // title: '斯洛克',
+                        // entitle: 'ssiluoke',
+                        key: 'slk',
                     },
                 ],
             },
         ],
     },
     {
-        title: '美食',
-        entitle: 'foods',
-        key: 'foods',
+        // title: '出行',
+        // key: 'goout',
+        key: 'Traveling',
         children: [
             {
-                title: '糖醋排骨',
-                entitle: 'paigu',
-                key: 'foods1',
-            },
-        ],
-    },
-    {
-        title: '学习',
-        key: 'learning',
-        entitle: 'learning',
-    },
-    {
-        title: '出行',
-        key: 'goout',
-        entitle: 'traveling',
-        children: [
-            {
-                title: '欧洲',
-                entitle: 'ouzhou',
-                key: 'goout1',
+                // title: '欧洲',
+                // entitle: 'ouzhou',
+                key: 'ou',
             },
             {
-                title: '美洲',
-                entitle: 'meizhou',
-                key: 'goout2',
+                // title: '美洲',
+                // entitle: 'meizhou',
+                key: 'mei',
             },
         ],
     },
@@ -88,69 +55,46 @@ const adminmenu = [
 
 const usermenu = [
     {
-        title: '运动',
-        entitle: 'sports',
-        key: 'sports',
+        // title: '运动',
+        // entitle: 'sports',
+        key: 'Sports',
         children: [
             {
-                title: '足球',
-                entitle: 'socerball',
-                key: 'sports1',
+                // title: '足球',
+                // entitle: 'socerball',
+                key: 'zuqiu',
                 route: '/App/Foods',
             },
             {
-                title: '篮球',
-                entitle: 'backetaball',
-                key: 'sports2',
-                route: '/App/Learning',
-            },
-            {
-                title: '排球',
-                entitle: 'paiqiuball',
-                key: 'sports3',
-                route: '/App/Sports',
-            },
-            {
-                title: '高尔夫',
-                entitle: 'gaoerfu',
-                key: 'sports4',
-                route: '/App/Goout/:id',
-            },
-            {
-                title: '桌球',
-                entitle: 'tableball',
-                key: 'sports6',
+                // title: '桌球',
+                // entitle: 'tableball',
+                key: 'Deskbool',
                 children: [
                     {
-                        title: '斯洛克',
-                        entitle: 'ssiluoke',
-                        key: 'sports61',
-                    },
-                    {
-                        title: '美式桌球',
-                        entitle: 'UStableball',
-                        key: 'sports62',
+                        // title: '斯洛克',
+                        // entitle: 'ssiluoke',
+                        key: 'slk',
                     },
                 ],
             },
         ],
     },
     {
-        title: '美食',
-        entitle: 'foods',
+        // title: '美食',
+        // entitle: 'foods',
         key: 'foods',
         children: [
             {
-                title: '糖醋排骨',
-                entitle: 'paigu',
-                key: 'foods1',
+                // title: '糖醋排骨',
+                // entitle: 'paigu',
+                key: 'tancu',
             },
         ],
     },
 
 ];
 export function getMenu() {
-    const menu = JSON.parse(localStorage.getItem('userInfo')).username === '超级管理员' ? adminmenu : usermenu;
+    const menu = JSON.parse(localStorage.getItem('userInfo')).username === '1' ? adminmenu : usermenu;
     return menu;
 }
 

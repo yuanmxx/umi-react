@@ -4,8 +4,8 @@ import { connect } from 'dva';
 import {
     Row, Col, Breadcrumb, ConfigProvider,
 } from 'antd';
-import zh_CN from 'antd/lib/locale-provider/zh_CN';
-import en_US from 'antd/lib/locale-provider/en_US';
+import CN from 'antd/lib/locale-provider/zh_CN';
+import US from 'antd/lib/locale-provider/en_US';
 import Header from '@/components/Header';
 import Footer from '@//components/Footer';
 import NavList from '@//components/NavList';
@@ -20,7 +20,11 @@ import NavList from '@//components/NavList';
 
 class BasicLayout extends Component {
     componentDidMount() {
+        this.initlocal();
+    }
+
     // 初始化国际化
+    initlocal = () => {
         const { dispatch } = this.props;
         dispatch({
             type: 'global/initlocal',
@@ -31,7 +35,7 @@ class BasicLayout extends Component {
     render() {
         const { location: { pathname }, children, currLocale } = this.props;
         return (
-            <ConfigProvider locale={currLocale === 'zh_CN' ? zh_CN : en_US}>
+            <ConfigProvider locale={currLocale === 'zh_CN' ? CN : US}>
                 <Row className="container">
                     <NavList {...this.props} />
                     <Col span={20} className="normal">
