@@ -4,30 +4,20 @@ import {
 
 const adminmenu = [
     {
-        // title: '运动',
-        // entitle: 'sports',
         key: 'Sports',
         children: [
             {
-                // title: '排球',
-                // entitle: 'paiqiuball',
                 key: 'paiqiu',
                 route: '/App/Sports',
             },
             {
-                // title: '高尔夫',
-                // entitle: 'gaoerfu',
                 key: 'gofo',
                 route: '/App/Goout/:id',
             },
             {
-                // title: '桌球',
-                // entitle: 'tableball',
                 key: 'Deskbool',
                 children: [
                     {
-                        // title: '斯洛克',
-                        // entitle: 'ssiluoke',
                         key: 'slk',
                     },
                 ],
@@ -35,18 +25,12 @@ const adminmenu = [
         ],
     },
     {
-        // title: '出行',
-        // key: 'goout',
         key: 'Traveling',
         children: [
             {
-                // title: '欧洲',
-                // entitle: 'ouzhou',
                 key: 'ou',
             },
             {
-                // title: '美洲',
-                // entitle: 'meizhou',
                 key: 'mei',
             },
         ],
@@ -55,24 +39,16 @@ const adminmenu = [
 
 const usermenu = [
     {
-        // title: '运动',
-        // entitle: 'sports',
         key: 'Sports',
         children: [
             {
-                // title: '足球',
-                // entitle: 'socerball',
                 key: 'zuqiu',
                 route: '/App/Foods',
             },
             {
-                // title: '桌球',
-                // entitle: 'tableball',
                 key: 'Deskbool',
                 children: [
                     {
-                        // title: '斯洛克',
-                        // entitle: 'ssiluoke',
                         key: 'slk',
                     },
                 ],
@@ -80,13 +56,9 @@ const usermenu = [
         ],
     },
     {
-        // title: '美食',
-        // entitle: 'foods',
         key: 'foods',
         children: [
             {
-                // title: '糖醋排骨',
-                // entitle: 'paigu',
                 key: 'tancu',
             },
         ],
@@ -100,6 +72,16 @@ export function getMenu() {
 
 export function login(data) {
     return post('/api/login', data);
+    // TODO: 单独处理特殊的请求直接用axios做特殊的配置，比如登陆不要token
+    // return axios({
+    //     method: 'post',
+    //     url: '/api/login',
+    //     data,
+    //     headers: {
+    //         lang: 'zhzh',
+    //         clintId: 'CAA',
+    //     },
+    // });
 }
 
 export function logout() {
