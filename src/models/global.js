@@ -35,6 +35,7 @@ export default {
 
         *login({ payload }, { call }) {
             const data = yield call(login, payload);
+            console.log(data);
             if (data.code === '200') {
                 router.push('/');
             }

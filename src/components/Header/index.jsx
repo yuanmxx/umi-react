@@ -9,7 +9,8 @@ import './index.less';
 
 
 const { Option } = Select;
-
+const Context = React.createContext({});
+console.log('Context', Context);
 @connect(({ global }) => {
     return {
         userInfo: global.userInfo,

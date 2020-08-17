@@ -70,13 +70,13 @@ class Login extends Component {
                               valuePropName: 'checked',
                               initialValue: true,
                           })(<Checkbox>{intlRemember}</Checkbox>)}
-                          <a href="" style={{ float: 'right' }}>
+                          <span style={{ float: 'right' }}>
                               {intlforgetPwd}
-                          </a>
+                          </span>
                           <Button type="primary" htmlType="submit" className="login-but">
                               {intlLogin}
                           </Button>
-                          <a href="">{intlregister}</a>
+                          <span>{intlregister}</span>
                       </Form.Item>
                   </Form>
               </Col>

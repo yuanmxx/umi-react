@@ -1,5 +1,4 @@
-// ref: https://umijs.org/config/
-export default {
+module.exports = {
     treeShaking: true,
     routes: [
         {
@@ -22,29 +21,18 @@ export default {
         },
     ],
     disableCSSModules: true,
-    outputPath: './build',
-    publicPath: './',
+    outputPath: '/build',
+    publicPath: '/',
     plugins: [
         // ref: https://umijs.org/plugin/umi-plugin-react.html
         ['umi-plugin-react', {
             antd: true,
             dva: true,
-            dynamicImport: false,
+            dynamicImport: true,
             title: 'my-umiapp',
-            dll: false,
             locale: {
                 default: 'zh-CN',
-                baseNavigator: false,
                 antd: true,
-            },
-            routes: {
-                exclude: [
-                    /models\//,
-                    /services\//,
-                    /model\.(t|j)sx?$/,
-                    /service\.(t|j)sx?$/,
-                    /components\//,
-                ],
             },
         }],
     ],

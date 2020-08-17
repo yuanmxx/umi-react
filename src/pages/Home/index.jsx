@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, DatePicker } from 'antd';
+import { Table } from 'antd';
 import intl from 'react-intl-universal';
 import './index.less';
 
@@ -18,8 +18,7 @@ export default class Home extends Component {
                     <Column title={intl.get('tableTitle.Age')} dataIndex="age" />
                     <Column title={intl.get('tableTitle.Address')} dataIndex="address" />
                 </Table>
-                <DatePicker onChange={this.onChange} />
-
+                {/* <DatePicker onChange={this.onChange} /> */}
             </div>
         );
     }
