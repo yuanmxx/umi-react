@@ -1,14 +1,3 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable no-void */
-/* eslint-disable no-console */
-/* eslint-disable max-len */
-/* eslint-disable prefer-destructuring */
-/* eslint-disable no-sequences */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-shadow */
-/* eslint-disable prefer-const */
-/* eslint-disable func-names */
 !(function (t) {
     let e,
         c,
